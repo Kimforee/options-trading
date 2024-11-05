@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Options Trading Home</title>
+    <style>
+        body {
+            background-color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow:  10px 10px 20px #d1d1d1, 
+                         -10px -10px 20px #ffffff;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .button {
+            background: #e0e0e0;
+            border: none;
+            border-radius: 12px;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            box-shadow: 5px 5px 15px #c1c1c1,
+                        -5px -5px 15px #ffffff;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .button:hover {
+            box-shadow: 5px 5px 25px #c1c1c1,
+                        -5px -5px 25px #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Options Trading Dashboard</h1>
+        <a href="{% url 'option_chain' 'MSFT' 'PE' %}">
+            <button class="button">View Options Chain</button>
+        </a>
+        <a href="{% url 'calculate_margin_and_premium' 'MSFT' 'PE' %}">
+            <button class="button">Calculate Margin & Premium</button>
+        </a>
+    </div>
+</body>
+</html>
